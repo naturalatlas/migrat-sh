@@ -11,7 +11,7 @@ var exec = require('child_process').exec;
 var pkg  = require('./package.json');
 
 module.exports = function(options) {
-	options.env = {};
+	options.env = options.env || {};
 	options.interpreter = options.interpreter || '/bin/bash';
 
 	return function(migrat) {
