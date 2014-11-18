@@ -3,6 +3,7 @@
  *
  * Options:
  *   - `interpreter` {string}: Path to interpreter (default: /bin/bash)
+ *   - `env` {object}: A list of environment variables to pass through.
  */
 
 var fs   = require('fs');
@@ -10,16 +11,26 @@ var exec = require('child_process').exec;
 var pkg  = require('./package.json');
 
 module.exports = function(options) {
+	options.env = {};
 	options.interpreter = options.interpreter || '/bin/bash';
 
 	return function(migrat) {
 		function scriptExecutor(file, action) {
 			return function(context, callback) {
 				var command = [options.interpreter, file].join(' ');
-				var opts = {env: {MIGRAT_ACTION: action}};
+
+				var env = {};
+				for (var key in options.env) {
+					if (options.env.hasOwnProperty(key)) {
+						env[key] = options.env[key];
+					}
+				}
+				env.MIGRAT_ACTION = action;
+
+				var opts = {env: env};
 				exec(command, opts, function(error, stdout, stderr) {
 					if (err) {
-						stderr = (stderr || '').replace((/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '');
+						stderr = (stderr || '').replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '');
 						return callback(new Error('Script exited with code ' + error.code + '.' + (stderr ? ' STDERR:\n' + stderr : '')));
 					}
 					callback();

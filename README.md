@@ -13,7 +13,10 @@ var sh = require('migrat-sh');
 
 module.exports = {
     plugins: [
-        sh({interpreter: '/bin/bash'})
+        sh({
+            interpreter: '/bin/bash',
+            env: {}
+        })
     ]
 };
 ```
