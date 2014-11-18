@@ -31,7 +31,7 @@ module.exports = function(options) {
 				exec(command, opts, function(err, stdout, stderr) {
 					if (err) {
 						stderr = (stderr || '').replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '');
-						return callback(new Error('Script exited with code ' + error.code + '.' + (stderr ? ' STDERR:\n' + stderr : '')));
+						return callback(new Error('Script exited with code ' + err.code + '.' + (stderr ? ' STDERR:\n' + stderr : '')));
 					}
 					callback();
 				});
