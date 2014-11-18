@@ -28,7 +28,7 @@ module.exports = function(options) {
 				env.MIGRAT_ACTION = action;
 
 				var opts = {env: env};
-				exec(command, opts, function(error, stdout, stderr) {
+				exec(command, opts, function(err, stdout, stderr) {
 					if (err) {
 						stderr = (stderr || '').replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '');
 						return callback(new Error('Script exited with code ' + error.code + '.' + (stderr ? ' STDERR:\n' + stderr : '')));
