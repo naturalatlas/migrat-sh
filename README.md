@@ -1,4 +1,5 @@
 # migrat-sh
+[![NPM version](http://img.shields.io/npm/v/migrat-sh.svg?style=flat)](https://www.npmjs.org/package/migrat-sh)
 
 A [Migrat](https://github.com/naturalatlas/migrat) plugin for running shell scripts as migrations.
 
