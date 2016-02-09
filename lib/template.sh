@@ -1,5 +1,6 @@
 #!/bin/bash
 # Created on {{date}}{{attribution}}
+set -e
 
 if [[ "${MIGRAT_ACTION}" == "up" ]]; then
 	# TODO: perform up action
