@@ -1,6 +1,6 @@
 {
   "name": "migrat-sh",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A migrat plugin for running shell scripts as migrations.",
   "main": "index.js",
   "keywords": [
