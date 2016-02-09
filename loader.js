@@ -2,8 +2,6 @@ var spawn = require('child_process').spawn;
 
 function scriptExecutor(options, file, action) {
 	return function(context, callback) {
-		var command = [options.interpreter, file].join(' ');
-
 		var env = {};
 		for (var key in options.env) {
 			if (options.env.hasOwnProperty(key)) {

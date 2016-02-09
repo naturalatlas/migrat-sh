@@ -1,0 +1,7 @@
+{
+	"extends": "naturalatlas",
+	"rules": {
+		"no-console": 0,
+		"no-shadow": 0
+	}
+}

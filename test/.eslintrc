@@ -1,0 +1,11 @@
+{
+	"globals": {
+		"it": true,
+		"describe": true,
+		"afterEach": true,
+		"beforeEach": true,
+		"before": true,
+		"after": true,
+		"TEST_HOST": true
+	}
+}
